@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styleRegist.css">
+    <script>
+        function validatePassword() {
+            var password = document.getElementsByName("Pass")[0].value;
+            var confirmPassword = document.getElementsByName("confpass")[0].value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up for <span>DocHub</span></h2>
+        <form action="process.php" method="post" onsubmit="return validatePassword();">
+            <input type="text" name="Username" placeholder="Username" required>
+            <input type="mail" id="email" name="email" placeholder="Enter your email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Enter a valid email address" required>
+            <input type="password" name="Pass" placeholder="Password" required>
+            <input type="password" name="confpass" placeholder="Confirm your password" required> 
+            <button type="submit" value="Submit" name="submit">Create account</button>
+        </form>
+    </div>
+</body>
+</html>
